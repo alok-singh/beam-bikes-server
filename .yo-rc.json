@@ -1,0 +1,17 @@
+{
+  "generator-astro-sls": {
+    "name": "beam-bikes-server",
+    "apibase": "handler",
+    "apiversion": "v1",
+    "version": "1.0.0",
+    "description": "Beam bikes server",
+    "author": "Alok Singh",
+    "src": "src",
+    "last_util": "common",
+    "last_endpoint": "generate-bikes",
+    "last_apidesc": "generate bikes",
+    "last_method": "get",
+    "last_handlerType": "true",
+    "last_handlerrequire": "true"
+  }
+}

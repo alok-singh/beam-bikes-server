@@ -1,0 +1,48 @@
+service: beam-bikes-server
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  settings:
+    dev:
+      STAGE: ${self:custom.stage}
+      NODE_ENV: 'develop'
+    stg:
+      STAGE: ${self:custom.stage}
+      NODE_ENV: 'staging'
+    prod:
+      STAGE: ${self:custom.stage}
+      NODE_ENV: 'production'
+
+plugins:
+  - serverless-plugin-tracing
+  - serverless-offline
+
+provider:
+  name: aws
+  region: ap-southeast-1
+  runtime: nodejs12.x
+  environment: ${self:custom.settings.${self:custom.stage}}
+
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'xray:PutTraceSegments'
+        - 'xray:PutTelemetryRecords'
+      Resource:
+        - '*'
+
+functions:
+  generateBikes:
+    handler: src/index.generateBikes
+    tracing: true
+    events:
+      - http:
+          method: get
+          path: v1/generate-bikes
+  bikes:
+    handler: src/index.bikes
+    tracing: true
+    events:
+      - http:
+          method: get
+          path: v1/bikes
