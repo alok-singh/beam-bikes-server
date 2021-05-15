@@ -3,27 +3,40 @@ Beam bikes server
 
 ## Requirements
 
- - [Node v10+](https://nodejs.org/en/download/current/) or [Docker](https://www.docker.com/)
+ - [Node v10+](https://nodejs.org/en/download/current/)
  - [Yarn](https://yarnpkg.com/en/docs/install)
+ - [MySQL](https://dev.mysql.com/downloads/mysql/)
 
 ## Getting Started
+## Pre-Requisites
+```bash
+MySQL
+```
 
-Install dependencies:
+Install Node dependencies:
 
 ```bash
 yarn
 ```
-
 ## Running Locally
+
+### Create .env file copy from .env.example
+### Make sure Node can access MYSQL
+
+### Run the following command
 
 ```bash
 yarn dev
 ```
 
-## Running in Production
+## Testing API
 
+### API Example to generate bikes
+http://localhost:3000/v1/generate-bikes?limit=1000
+
+### API Example to get bikes
 ```bash
-yarn deploy
+http://localhost:3000/v1/bikes?lat=1.2847447&lng=103.5669755&distance=100&limit=12
 ```
 
 ## Lint
@@ -37,29 +50,6 @@ yarn lint:fix
 
 # lint and watch for changes
 yarn lint:watch
-```
-
-## Test
-
-```bash
-# run all tests with Jest
-yarn test
-
-# run unit tests with coverage
-yarn test:unit
-
-# run integration tests
-yarn test:integration
-
-# run all tests and watch for changes
-yarn test:watch
-```
-
-## Validate
-
-```bash
-# run lint and tests
-yarn validate
 ```
 
 ## License
