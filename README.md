@@ -20,10 +20,17 @@ yarn
 ```
 ## Running Locally
 
-### Create .env file copy from .env.example
-### Make sure Node can access MYSQL
+```bash 
+Create .env file copy from .env.example 
+```
+```bash
+Replace test values with actual values
+```
+```bash 
+Make sure Node can access MYSQL
+```
 
-### Run the following command
+### Run the following command to start server locally
 
 ```bash
 yarn dev
