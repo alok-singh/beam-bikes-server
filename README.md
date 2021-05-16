@@ -1,25 +1,33 @@
-# beam-bikes-server
-Beam bikes server
+# Scooter Server
+Scooter server is a serverless api setup to generate and search bikes in Singapore.
+
 
 ## Requirements
-
  - [Node v10+](https://nodejs.org/en/download/current/)
  - [Yarn](https://yarnpkg.com/en/docs/install)
  - [MySQL](https://dev.mysql.com/downloads/mysql/)
 
+
 ## Getting Started
-## Pre-Requisites
+Pre-Requisites
 ```bash
 MySQL
 ```
+```bash
+Node
+```
+```bash
+Yarn
+```
+
 
 Install Node dependencies:
 
 ```bash
 yarn
 ```
-## Running Locally
 
+Running Locally
 ```bash 
 Create .env file copy from .env.example 
 ```
@@ -30,25 +38,24 @@ Replace test values with actual values
 Make sure Node can access MYSQL
 ```
 
-### Run the following command to start server locally
-
+Run the following command to start server locally
 ```bash
 yarn dev
 ```
 
-## Testing API
+### Testing API
 
-### API Example to generate bikes
+API Example to generate bikes
 ```bash
 http://localhost:3000/v1/generate-bikes?limit=1000
 ```
 
-### API Example to get bikes
+API Example to get bikes
 ```bash
 http://localhost:3000/v1/bikes?lat=1.2847447&lng=103.5669755&distance=100&limit=12
 ```
 
-## Lint
+Lint
 
 ```bash
 # lint code with ESLint
