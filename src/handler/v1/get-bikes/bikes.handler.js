@@ -1,4 +1,4 @@
-const runQuery = require('@utils/db-connection');
+const runQuery = require('@services/db-connection');
 const { OK } = require('@utils/helper');
 
 const { DEFAULT_LIMIT, BIKE_LIST_TABLE_NAME, SRID } = require('@config/vars');

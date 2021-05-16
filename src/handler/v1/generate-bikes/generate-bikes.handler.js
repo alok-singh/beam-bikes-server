@@ -4,7 +4,7 @@
 */
 
 const { OK } = require('@utils/helper');
-const runQuery = require('@utils/db-connection');
+const runQuery = require('@services/db-connection');
 
 const {
   latitudeVariation, longitudeVariation, bikeSizeList, providerList

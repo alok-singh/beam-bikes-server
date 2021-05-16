@@ -2,17 +2,16 @@
  * Monitoring Middleware
  *
  */
-// const logger = require('@utils/logger');
+const logger = require('@utils/logger');
 
-const sendMonitoringLogs = async () => {
-  const sendMonitoringLogs = async (request) => {
+const sendMonitoringLogs = async (request) => {
   try {
     const { event, context, response } = request;
     const { body } = response;
     const logData = {
       request: event,
       context,
-      response: body,
+      response: JSON.parse(body),
       statusCode: response.statusCode
     };
     logger.info('API Request', logData);
@@ -20,6 +19,7 @@ const sendMonitoringLogs = async () => {
     logger.error('Monitoring error', error);
   }
 };
+
 
 const monitoringMiddleware = () => ({
   after: (handler, next) => {
